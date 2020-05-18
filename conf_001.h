@@ -52,7 +52,7 @@ const int16s  BURST_PERIOD              = 1;
 //      CBR - Constant Bit Rate
 ///////////////////////////////////////////////////////////
 
-#define TRAFFIC_TYPE   VST
+#define TRAFFIC_TYPE   CBR
 //#define TRAFFIC_TYPE   CBR
 
 

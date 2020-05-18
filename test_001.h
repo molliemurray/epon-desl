@@ -181,7 +181,7 @@ void PrintResult( void )
     PER_PON( "AVG CYCLE (ms)",         CYC[t].GetAvg() );
     PER_PON( "MAX CYCLE (ms)",         CYC[t].GetMax() );
     PER_PON( "CYCLES",                 CYC[t].GetCount() );
-    PER_PON( "UTIL",                   SentByte[t]/RcvdByte[t] );
+    //PER_PON( "UTIL",                   (SentByte[t]+RcvdByte[t]) / (1000000 * PON_RATE_MBPS  / 8 ) );
 
     MSG_RSLT( endl );
 }

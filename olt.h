@@ -70,10 +70,10 @@ private:
         //////////////////////////////////////////////////////////
 
         // a. Fixed service
-        //ptr->GATE.Length = MaxSlot; 
+        ptr->GATE.Length = MaxSlot; 
 
         // b. Limited service
-        ptr->GATE.Length = MIN<int32s>( pEvent->RPRT.Length + _OVERHEAD( MPCP_PACKET_SIZE ), MaxSlot ); 
+        //ptr->GATE.Length = MIN<int32s>( pEvent->RPRT.Length + _OVERHEAD( MPCP_PACKET_SIZE ), MaxSlot ); 
 
         // c. Gated service
         //ptr->GATE.Length = pEvent->RPRT.Length + _OVERHEAD( MPCP_PACKET_SIZE ); 
