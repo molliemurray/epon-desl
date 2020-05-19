@@ -141,11 +141,13 @@ DESL::time_t    RunTime[NUM_TEST]  = { 0 };        // Simulation Run Time
                     
 int32s          RcvdPckt[NUM_TEST] = { 0 };        // Total Number of Packets received 
 int32s          DropPckt[NUM_TEST] = { 0 };        // Total Number of Packets dropped 
-int32s          SentPckt[NUM_TEST] = { 0 };        // Total Number of Packets received at OLT 
+int32s          SentPckt[NUM_TEST] = { 0 };        // Total Number of Packets received at OLT
+int32s          SchdPckt[NUM_TEST] = { 0 };        // Total Number of Packets scheduled by OLT
 
 int64s          RcvdByte[NUM_TEST] = { 0 };        // Total Number of Bytes received 
 int64s          DropByte[NUM_TEST] = { 0 };        // Total Number of Bytes dropped 
 int64s          SentByte[NUM_TEST] = { 0 };        // Total Number of Bytes received at OLT 
+int64s          SchdByte[NUM_TEST] = { 0 };        // Total Number of Bytes scheduled by OLT
 
 Stats           DLY[NUM_TEST];                     // Delay statistics 
 Stats           QUE[NUM_TEST];                     // Queue size statistics 
@@ -181,6 +183,8 @@ void PrintResult( void )
     PER_PON( "AVG CYCLE (ms)",         CYC[t].GetAvg() );
     PER_PON( "MAX CYCLE (ms)",         CYC[t].GetMax() );
     PER_PON( "CYCLES",                 CYC[t].GetCount() );
+    PER_PON( "SCHD PACKETS",           SchdPckt[t] );
+    PER_PON( "SCHD BYTES",             SchdByte[t] );
     //PER_PON( "UTIL",                   (SentByte[t]+RcvdByte[t]) / (1000000 * PON_RATE_MBPS  / 8 ) );
 
     MSG_RSLT( endl );
@@ -277,6 +281,11 @@ void Monitor( DESL::evnt_t* pEvent )
         // Save last cycle start time
         ////////////////////////////////////////////////////////////
         LastCycleStart = pEvent->GATE.StartTime;
+
+        ////////////////////////////////////////////////////////////
+        // Counts scheduled packets
+        ////////////////////////////////////////////////////////////
+        SchdByte[NumTest] += pEvent->GATE.Length;
     }
 }
 

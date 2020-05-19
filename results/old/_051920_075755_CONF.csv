@@ -1,0 +1,29 @@
+_051920_075755_CONF.csv
+===============================
+CONFIGURATION,001
+File,C:\Mollie\epon-desl\conf_001.h
+Last modified,Tue May 19 07:57:50 2020
+Last compiled,May 19 2020 07:57:53
+===============================
+===============================
+SIMULATION,001
+File,C:\Mollie\epon-desl\test_001.h
+Last modified,Tue May 19 07:09:32 2020
+Last compiled,May 19 2020 07:57:53
+===============================
+Packet Limit,1000000
+Warm-up time (seconds),10
+Minimum Load,0.0500000007451
+Maximum Load,0.899999976158
+Number of Tests,18
+-----------------------------
+Traffic Type,Constant Bit Rate
+-------------------------------------------
+OLT HW Delay (ns),16384
+ONU HW Delay (ns),16384
+Guard Band Time (ns),1000
+-------------------------------------------
+Number of LLIDs,16
+ONU Buffer Size (bytes),10485760
+Minimum Link Distance (m),500
+Maximum Link Distance (m),20000
