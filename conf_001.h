@@ -34,8 +34,8 @@ const int32s  PON_MAX_LINK_DISTANCE     = 20000;    //  20   km
 //  Configuration Constants 
 ///////////////////////////////////////////////////////////
 const int16s   NUM_LLID                 = 16 ;       // one LLID per ONU 
-//const int32s   BUFFER_SIZE              = 1024*1024; // ONU buffer size = 1 Mbyte
-const int32s   BUFFER_SIZE              = 1024 * 1024 * 10; // ONU buffer size = 10 Mbyte
+const int32s   BUFFER_SIZE              = 1024*1024; // ONU buffer size = 1 Mbyte
+//const int32s   BUFFER_SIZE              = 1024 * 1024 * 10; // ONU buffer size = 10 Mbyte
 const int16s   MAX_SLOT                 = 15500;
 
 ///////////////////////////////////////////////////////////
@@ -54,7 +54,7 @@ const int16s  BURST_PERIOD              = 1;
 
 #define TRAFFIC_TYPE   LRD
 //#define TRAFFIC_TYPE   CBR
-
+//#define TRAFFIC_TYPE   VST
 
 
 
